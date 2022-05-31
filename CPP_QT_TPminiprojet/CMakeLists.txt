@@ -8,6 +8,6 @@ find_package(Qt5Widgets CONFIG REQUIRED)
 
 file (GLOB_RECURSE sourceCode src/*.cpp src/*.h)
 
-add_executable(CPP_QT_TPminiprojet ${sourceCode})
+add_executable(CPP_QT_TPminiprojet ${sourceCode} src/Player.cpp src/Player.h)
 
 target_link_libraries(CPP_QT_TPminiprojet Qt5::Widgets)

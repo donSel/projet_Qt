@@ -45,12 +45,12 @@ QAction
 -
 QMessageBox
 -
+QGraphicsView
+-
 MyScene.h
 /mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MyScene.h
 
 /mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MyScene.cpp
-MyScene.h
-/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MyScene.h
 QObject
 -
 QGraphicsScene
@@ -73,8 +73,28 @@ QImage
 -
 QMessageBox
 -
+MyScene.h
+/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MyScene.h
 
 /mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MyScene.h
+QGraphicsScene
+-
+QPixmap
+-
+QTimer
+-
+QPainter
+-
+QRectF
+-
+QKeyEvent
+-
+QGraphicsLineItem
+-
+Player.h
+/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/Player.h
+
+/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/Player.h
 QGraphicsScene
 -
 QPixmap
@@ -93,6 +113,8 @@ QGraphicsLineItem
 /mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/main.cpp
 QApplication
 -
+QTime
+-
 MainWindow.h
 /mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MainWindow.h
 
@@ -103,6 +125,10 @@ qobject.h
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QRectF
 qrect.h
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QTime
+qdatetime.h
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer
 qtimer.h
@@ -234,6 +260,16 @@ QtCore/qscopedpointer.h
 QtCore/qiodevice.h
 -
 QtCore/qpair.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h
+QtCore/qstring.h
+-
+QtCore/qnamespace.h
+-
+QtCore/qshareddata.h
+-
+limits
 -
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h

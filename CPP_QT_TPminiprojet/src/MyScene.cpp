@@ -1,5 +1,3 @@
-#include "MyScene.h"
-
 #include <QObject>
 #include <QGraphicsScene>
 #include <QGraphicsView>
@@ -11,6 +9,10 @@
 #include <QBrush>
 #include <QImage>
 #include <QMessageBox>
+
+
+#include "MyScene.h"
+
 
 using namespace std;
 
@@ -56,27 +58,28 @@ MyScene::MyScene(QObject* parent) : QGraphicsScene(parent) {
     this->addItem(wall);
 
     // Set Player
+    this->player = new Player();
+
 //    this->qgti = new QGraphicsRectItem(START_X, START_Y, 10, 10); OLD
-    this->qgti = new QGraphicsPixmapItem(QPixmap("../img/Hero-idle-big.gif").scaled(30,40));
-    qgti->setOffset(0, -40);
-    this->addItem(qgti);
+    this->addItem(player->getQgti());
 
     // Set Hitbox
-    this->leftHitBox = new QGraphicsLineItem(5, -1, 5, -10, qgti);
-    leftHitBox->setOpacity(0);
-    this->addItem(leftHitBox);
-    this->RightHitBox = new QGraphicsLineItem(25, -1, 25, -10, qgti);
-    RightHitBox->setOpacity(0);
-    this->addItem(RightHitBox);
-    this->DownHitBox = new QGraphicsLineItem(10, 0, 20, 0, qgti);
-    DownHitBox->setOpacity(0);
-    this->addItem(DownHitBox);
-    this->UpHitBox = new QGraphicsLineItem(10, -15, 20, -15, qgti);
-    UpHitBox->setOpacity(0);
-    this->addItem(UpHitBox);
+    this->addItem(player->getLeftHitbox());
+
+    this->addItem(player->getRightHitbox());
+
+    this->addItem(player->getDownHitbox());
+
+    this->addItem(player->getUpHitbox());
 
     // Debug Start Position
-    this->qgti->setPos(START_X, START_Y);
+    this->player->getQgti()->setPos(START_X, START_Y); // function set initPos
+}
+
+
+// Ascesseur
+Player* MyScene::getPLayer(){
+    return player;
 }
 
 // QrectPixmaItem
@@ -90,9 +93,9 @@ void MyScene::drawBackground(QPainter *painter, const QRectF &rect) {
 
 void MyScene::update() {
     // Gravité => (vérifier si le personnage est bien en contact avec une plateforme)
-    if (!getOnPlatform()){
-        QPointF pos = qgti->pos(); //récupération de la position de l’objet qgti
-        qgti->setPos(pos.rx(), pos.ry() + GRAVITY); //incrémentation de la coordonnée y
+    if (!player->getOnPlatform()){
+        QPointF pos = player->getQgti()->pos(); //récupération de la position de l’objet getQgti()
+        player->getQgti()->setPos(pos.rx(), pos.ry() + GRAVITY); //incrémentation de la coordonnée y
     }
 //    cout << "is on platform : " << getOnPlatform() << endl;
 //    cout << "count Deaths : " << countDeaths << endl;
@@ -101,7 +104,7 @@ void MyScene::update() {
     colisions();
 
     // Déplacements
-    move();
+    player->move();
 
     // Moving platforms
     movePlatforms();
@@ -115,30 +118,35 @@ void MyScene::update() {
 
 
 void MyScene::playerFalls(){
-    QPointF pos = qgti->pos();
+    QPointF pos = player->getQgti()->pos();
 //    cout << pos.ry() << endl;
     if (pos.ry() > 300){
         QMessageBox msgBox; // Mesage box
         msgBox.setText("Vous êtes mort !");
         msgBox.exec();
-        qgti->setPos(START_X, START_Y);
+        // Reseting the Movement bools
+        player->setLeftMove(false);
+        player->setRightMove(false);
+        player->setUpMove(false);
+        player->setDownMove(false);
+        player->getQgti()->setPos(START_X, START_Y);
         countDeaths++;
     }
 }
 
 
 void MyScene::playerFinished(){
-    if (DownHitBox->collidesWithItem(finish)){
+    if (player->getDownHitbox()->collidesWithItem(finish)){
         QMessageBox msgBox; // Mesage box
         msgBox.setText("Vous avez terminé !");
         msgBox.exec();
         // Reseting the Movement bools
-        setLeftMove(false);
-        setRightMove(false);
-        setUpMove(false);
-        setDownMove(false);
+        player->setLeftMove(false);
+        player->setRightMove(false);
+        player->setUpMove(false);
+        player->setDownMove(false);
         // teleporting the player to the start
-        qgti->setPos(START_X, START_Y);
+        player->getQgti()->setPos(START_X, START_Y);
     }
 }
 
@@ -146,60 +154,35 @@ void MyScene::playerFinished(){
 void MyScene::colisions(){
 
     // Colision with the upper part of a platform
-    if (DownHitBox->collidesWithItem(qgri) || DownHitBox->collidesWithItem(platform2) || DownHitBox->collidesWithItem(wall) || DownHitBox->collidesWithItem(platform1) || DownHitBox->collidesWithItem(finish)) { // liste de mur colide with item
-        QPointF pos = qgti->pos();
+    if (player->getDownHitbox()->collidesWithItem(qgri) || player->getDownHitbox()->collidesWithItem(platform2) || player->getDownHitbox()->collidesWithItem(wall) || player->getDownHitbox()->collidesWithItem(platform1) || player->getDownHitbox()->collidesWithItem(finish)) { // liste de mur colide with item
+        QPointF pos = player->getQgti()->pos();
 //        cout << "Collision basse !" << endl;
-        qgti->setPos(pos.rx(), pos.ry());
-        setOnPlatform(true);
+        player->getQgti()->setPos(pos.rx(), pos.ry());
+        player->setOnPlatform(true);
     }
     else {
-        setOnPlatform(false);
+        player->setOnPlatform(false);
     }
 
     // Colision with the lower part of a platform
-    if (UpHitBox->collidesWithItem(qgri) || UpHitBox->collidesWithItem(platform2) || UpHitBox->collidesWithItem(wall) || UpHitBox->collidesWithItem(platform1) || UpHitBox->collidesWithItem(finish)) { // liste de mur colide with item
-        QPointF pos = qgti->pos();
+    if (player->getUpHitbox()->collidesWithItem(qgri) || player->getUpHitbox()->collidesWithItem(platform2) || player->getUpHitbox()->collidesWithItem(wall) || player->getUpHitbox()->collidesWithItem(platform1) || player->getUpHitbox()->collidesWithItem(finish)) { // liste de mur colide with item
+        QPointF pos = player->getQgti()->pos();
 //        cout << "Collision haute !" << endl;
-        qgti->setPos(pos.rx(), pos.ry() + 40);
+        player->getQgti()->setPos(pos.rx(), pos.ry() + 40);
     }
 
     // Left colision with a wall or platform
-    if (leftHitBox->collidesWithItem(qgri) || leftHitBox->collidesWithItem(platform2) || leftHitBox->collidesWithItem(wall) || leftHitBox->collidesWithItem(platform1) || leftHitBox->collidesWithItem(finish)) { // liste de mur colide with item
-        QPointF pos = qgti->pos();
+    if (player->getLeftHitbox()->collidesWithItem(qgri) || player->getLeftHitbox()->collidesWithItem(platform2) || player->getLeftHitbox()->collidesWithItem(wall) || player->getLeftHitbox()->collidesWithItem(platform1) || player->getLeftHitbox()->collidesWithItem(finish)) { // liste de mur colide with item
+        QPointF pos = player->getQgti()->pos();
 //        cout << "Collision gauche !" << endl;
-        qgti->setPos(pos.rx() + XMOVE, pos.ry());
+        player->getQgti()->setPos(pos.rx() + XMOVE, pos.ry());
     }
 
     // Right colision with a wall or platform
-    if (RightHitBox->collidesWithItem(qgri) || RightHitBox->collidesWithItem(platform2) || RightHitBox->collidesWithItem(wall) || RightHitBox->collidesWithItem(platform1) || RightHitBox->collidesWithItem(finish)) { // liste de mur colide with item
-        QPointF pos = qgti->pos();
+    if (player->getRightHitbox()->collidesWithItem(qgri) || player->getRightHitbox()->collidesWithItem(platform2) || player->getRightHitbox()->collidesWithItem(wall) || player->getRightHitbox()->collidesWithItem(platform1) || player->getRightHitbox()->collidesWithItem(finish)) { // liste de mur colide with item
+        QPointF pos = player->getQgti()->pos();
 //        cout << "Collision droite !" << endl;
-        qgti->setPos(pos.rx() - XMOVE, pos.ry());
-    }
-}
-
-
-void MyScene::move(){
-
-    if (getLeftMove()){
-        cout << "Gauche !" << endl;
-        QPointF pos = qgti->pos();
-        qgti->setPos(pos.rx() - XMOVE, pos.ry());
-    }
-
-    if (getRightMove()){
-        cout << "Droite !" << endl;
-        QPointF pos = qgti->pos();
-        qgti->setPos(pos.rx() + XMOVE, pos.ry());
-    }
-
-    if (getUpMove()){
-        QPointF pos = qgti->pos();
-        qgti->setPos(pos.rx(), pos.ry() - JUMP);
-    }
-    else {
-        QPointF pos = qgti->pos();
-        qgti->setPos(pos.rx(), pos.ry());
+        player->getQgti()->setPos(pos.rx() - XMOVE, pos.ry());
     }
 }
 
@@ -217,103 +200,54 @@ void MyScene::movePlatforms() {
 }
 
 
-void MyScene::keyPressEvent(QKeyEvent* event){
-
-    if (event->key() == Qt::Key_Up){ // activer si et suelement si le personnage est en contact avec une plateforme sous lui
-//        cout << "is Gamer on platform : " << getOnPlatform() << endl;
-        if (getOnPlatform()){
-            setUpMove(true);
-        }
-        else {
-            setUpMove(false);
-        }
-    }
-
-    if (event->key() == Qt::Key_Down){
-        setDownMove(true);
-    }
-    if (event->key() == Qt::Key_Left){
-        setLeftMove(true);
-    }
-    if (event->key() == Qt::Key_Right){
-        setRightMove(true);
-    }
-}
-
-
-bool MyScene::isGamerOnPlatform(){ //detect if collision between platform and DownHitBox
-    if (DownHitBox->collidesWithItem(qgri) || DownHitBox->collidesWithItem(platform2) || DownHitBox->collidesWithItem(wall) || DownHitBox->collidesWithItem(platform1) || DownHitBox->collidesWithItem(finish)){
+bool MyScene::isGamerOnPlatform(){ //detect if collision between platform and getDownHitbox()
+    if (player->getDownHitbox()->collidesWithItem(qgri) || player->getDownHitbox()->collidesWithItem(platform2) || player->getDownHitbox()->collidesWithItem(wall) || player->getDownHitbox()->collidesWithItem(platform1) || player->getDownHitbox()->collidesWithItem(finish)){
         return true;
     }
     return false;
 }
 
 
-void MyScene::keyReleaseEvent(QKeyEvent *event) {
+void MyScene::keyPressEvent(QKeyEvent* event){
 
-    if (event->key() == Qt::Key_Up){ // relachement sur la touche haut du clavier
-        setUpMove(false);
+    if (event->key() == Qt::Key_Up){ // activer si et suelement si le personnage est en contact avec une plateforme sous lui
+//        cout << "is Gamer on platform : " << getOnPlatform() << endl;
+        if (player->getOnPlatform()){
+            player->setUpMove(true);
+        }
+        else {
+            player->setUpMove(false);
+        }
     }
 
     if (event->key() == Qt::Key_Down){
-        setDownMove(false);
+        player->setDownMove(true);
+    }
+    if (event->key() == Qt::Key_Left){
+        player->setLeftMove(true);
+    }
+    if (event->key() == Qt::Key_Right){
+        player->setRightMove(true);
+    }
+}
+
+
+void MyScene::keyReleaseEvent(QKeyEvent *event) {
+
+    if (event->key() == Qt::Key_Up){ // relachement sur la touche haut du clavier
+        player->setUpMove(false);
+    }
+
+    if (event->key() == Qt::Key_Down){
+        player->setDownMove(false);
     }
 
     if (event->key() == Qt::Key_Left){
-        setLeftMove(false);
+        player->setLeftMove(false);
     }
     if (event->key() == Qt::Key_Right){
-        setRightMove(false);
+        player->setRightMove(false);
     }
-}
-
-
-void MyScene::setLeftMove(bool val){
-    leftMove = val;
-}
-
-
-void MyScene::setRightMove(bool val){
-    rightMove = val;
-}
-
-
-void MyScene::setUpMove(bool val){
-    downMove = val;
-}
-
-
-void MyScene::setDownMove(bool val){
-    upMove = val;
-}
-
-void MyScene::setOnPlatform(bool val){
-    onPlatform = val;
-}
-
-
-bool MyScene::getLeftMove(){
-    return leftMove;
-}
-
-
-bool MyScene::getRightMove(){
-    return rightMove;
-}
-
-
-bool MyScene::getUpMove(){
-    return downMove;
-}
-
-
-bool MyScene::getDownMove(){
-    return upMove;
-}
-
-
-bool MyScene::getOnPlatform(){
-    return onPlatform;
 }
 
 

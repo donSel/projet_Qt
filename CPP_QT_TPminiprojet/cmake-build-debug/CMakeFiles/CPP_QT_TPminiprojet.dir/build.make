@@ -83,9 +83,22 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MyScene.cpp -o CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.s
 
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: CMakeFiles/CPP_QT_TPminiprojet.dir/flags.make
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: ../src/Player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o -c /mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/Player.cpp
+
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/Player.cpp > CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.i
+
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/Player.cpp -o CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.s
+
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o: CMakeFiles/CPP_QT_TPminiprojet.dir/flags.make
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o -c /mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/main.cpp
 
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.s: cmake_force
 
 CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o: CMakeFiles/CPP_QT_TPminiprojet.dir/flags.make
 CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o: CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o -c /mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp
 
 CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.i: cmake_force
@@ -113,6 +126,7 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.
 CPP_QT_TPminiprojet_OBJECTS = \
 "CMakeFiles/CPP_QT_TPminiprojet.dir/src/MainWindow.cpp.o" \
 "CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o" \
+"CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o" \
 "CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o" \
 "CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o"
 
@@ -121,6 +135,7 @@ CPP_QT_TPminiprojet_EXTERNAL_OBJECTS =
 
 CPP_QT_TPminiprojet: CMakeFiles/CPP_QT_TPminiprojet.dir/src/MainWindow.cpp.o
 CPP_QT_TPminiprojet: CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o
+CPP_QT_TPminiprojet: CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o
 CPP_QT_TPminiprojet: CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o
 CPP_QT_TPminiprojet: CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o
 CPP_QT_TPminiprojet: CMakeFiles/CPP_QT_TPminiprojet.dir/build.make
@@ -128,7 +143,7 @@ CPP_QT_TPminiprojet: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.11.3
 CPP_QT_TPminiprojet: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.11.3
 CPP_QT_TPminiprojet: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.11.3
 CPP_QT_TPminiprojet: CMakeFiles/CPP_QT_TPminiprojet.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable CPP_QT_TPminiprojet"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable CPP_QT_TPminiprojet"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CPP_QT_TPminiprojet.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

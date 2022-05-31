@@ -11,8 +11,8 @@ set(AM_CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE "")
 set(AM_BUILD_DIR "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CPP_QT_TPminiprojet_autogen")
 set(AM_INCLUDE_DIR "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CPP_QT_TPminiprojet_autogen/include")
 # Files
-set(AM_SOURCES "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MainWindow.cpp;/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MyScene.cpp;/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/main.cpp")
-set(AM_HEADERS "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MainWindow.h;/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MyScene.h")
+set(AM_SOURCES "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MainWindow.cpp;/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MyScene.cpp;/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/Player.cpp;/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/main.cpp")
+set(AM_HEADERS "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MainWindow.h;/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MyScene.h;/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/Player.h")
 set(AM_SETTINGS_FILE "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CMakeFiles/CPP_QT_TPminiprojet_autogen.dir/AutogenOldSettings.txt")
 # Qt
 set(AM_QT_VERSION_MAJOR 5)

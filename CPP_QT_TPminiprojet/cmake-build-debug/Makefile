@@ -217,6 +217,33 @@ src/MyScene.cpp.s:
 	$(MAKE) -f CMakeFiles/CPP_QT_TPminiprojet.dir/build.make CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.s
 .PHONY : src/MyScene.cpp.s
 
+src/Player.o: src/Player.cpp.o
+
+.PHONY : src/Player.o
+
+# target to build an object file
+src/Player.cpp.o:
+	$(MAKE) -f CMakeFiles/CPP_QT_TPminiprojet.dir/build.make CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o
+.PHONY : src/Player.cpp.o
+
+src/Player.i: src/Player.cpp.i
+
+.PHONY : src/Player.i
+
+# target to preprocess a source file
+src/Player.cpp.i:
+	$(MAKE) -f CMakeFiles/CPP_QT_TPminiprojet.dir/build.make CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.i
+.PHONY : src/Player.cpp.i
+
+src/Player.s: src/Player.cpp.s
+
+.PHONY : src/Player.s
+
+# target to generate assembly for a file
+src/Player.cpp.s:
+	$(MAKE) -f CMakeFiles/CPP_QT_TPminiprojet.dir/build.make CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.s
+.PHONY : src/Player.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -263,6 +290,9 @@ help:
 	@echo "... src/MyScene.o"
 	@echo "... src/MyScene.i"
 	@echo "... src/MyScene.s"
+	@echo "... src/Player.o"
+	@echo "... src/Player.i"
+	@echo "... src/Player.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

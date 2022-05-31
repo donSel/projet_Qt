@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/CPP_QT_TPminiprojet_autogen.dir/AutogenOldSettings.txt"
   "CMakeFiles/CPP_QT_TPminiprojet.dir/src/MainWindow.cpp.o"
   "CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o"
+  "CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o"
   "CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o"
   "CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o"
   "CPP_QT_TPminiprojet.pdb"

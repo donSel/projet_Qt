@@ -7,6 +7,7 @@
 #include <QMenuBar>
 #include <QAction>
 #include <QMessageBox>
+#include <QGraphicsView>
 
 #include "MyScene.h"
 
@@ -18,6 +19,7 @@ private :
     QGraphicsView* mainView;
     QMenu* helpMenu;
 
+    QGraphicsView* playerView;
 
 public:
     MainWindow(QWidget* parent = nullptr);
