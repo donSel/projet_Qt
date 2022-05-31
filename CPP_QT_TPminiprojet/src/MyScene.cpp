@@ -56,7 +56,7 @@ MyScene::MyScene(QObject* parent) : QGraphicsScene(parent) {
     this->addItem(wall);
 
     // Set Player
-//    this->qgti = new QGraphicsRectItem(START_X, START_Y, 10, 10);
+//    this->qgti = new QGraphicsRectItem(START_X, START_Y, 10, 10); OLD
     this->qgti = new QGraphicsPixmapItem(QPixmap("../img/Hero-idle-big.gif").scaled(30,40));
     qgti->setOffset(0, -40);
     this->addItem(qgti);
@@ -76,7 +76,6 @@ MyScene::MyScene(QObject* parent) : QGraphicsScene(parent) {
     this->addItem(UpHitBox);
 
     // Debug Start Position
-    QPointF pos = qgti->pos();
     this->qgti->setPos(START_X, START_Y);
 }
 
@@ -133,7 +132,12 @@ void MyScene::playerFinished(){
         QMessageBox msgBox; // Mesage box
         msgBox.setText("Vous avez terminé !");
         msgBox.exec();
-        QPointF pos = qgti->pos();
+        // Reseting the Movement bools
+        setLeftMove(false);
+        setRightMove(false);
+        setUpMove(false);
+        setDownMove(false);
+        // teleporting the player to the start
         qgti->setPos(START_X, START_Y);
     }
 }
@@ -178,11 +182,13 @@ void MyScene::colisions(){
 void MyScene::move(){
 
     if (getLeftMove()){
+        cout << "Gauche !" << endl;
         QPointF pos = qgti->pos();
         qgti->setPos(pos.rx() - XMOVE, pos.ry());
     }
 
     if (getRightMove()){
+        cout << "Droite !" << endl;
         QPointF pos = qgti->pos();
         qgti->setPos(pos.rx() + XMOVE, pos.ry());
     }
@@ -198,26 +204,16 @@ void MyScene::move(){
 }
 
 
-void MyScene::movePlatforms(){
+void MyScene::movePlatforms() {
     QPointF pos = platform2->pos();
-    if (platform2->collidesWithItem(finish)){
+    if (platform2->collidesWithItem(finish)) {
         speedPlateforme = -1;
     }
-    if (platform2->collidesWithItem(qgri)){
+    if (platform2->collidesWithItem(qgri)) {
         speedPlateforme = 1;
 //        cout << "collision avec la première palteforme ! " << endl;
     }
     platform2->setPos(pos.rx() + speedPlateforme, pos.ry());
-
-//    platform2->setPos(pos.rx() + 1, pos.ry());
-//    if (pos.rx() < 300){
-//        platform2->setPos(pos.rx() + 1, pos.ry());
-//    }
-//    if (pos.rx() > ){
-//        platform2->setPos(pos.rx() - 1, pos.ry());
-//    }
-//    if (pos.rx() < 300){
-//        platform2->setPos(pos.rx() + 1, pos.ry());
 }
 
 

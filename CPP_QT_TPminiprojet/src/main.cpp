@@ -1,4 +1,5 @@
 #include <QApplication>
+#include <QTime>
 #include "MainWindow.h"
 
 int main(int argc, char *argv[]) {

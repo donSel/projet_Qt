@@ -27,7 +27,7 @@ MainWindow::~MainWindow(){
 
 }
 
-void MainWindow::slot_aboutMenu(){
+void MainWindow::slot_aboutMenu(){ // => wtf is that
     QMessageBox msgBox;
     msgBox.setText("A small QT/C++ projet...");
     msgBox.setModal(true); // on souhaite que la fenetre soit modale i.e qu'on ne puisse plus cliquer ailleurs

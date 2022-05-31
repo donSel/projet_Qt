@@ -1,6 +1,7 @@
 #ifndef CPP_QT_TPMINIPROJET_MYSCENE_H
 #define CPP_QT_TPMINIPROJET_MYSCENE_H
 
+
 #include <QGraphicsScene>
 #include <QPixmap>
 #include <QTimer>
@@ -25,43 +26,43 @@ class MyScene : public QGraphicsScene {
 private :
     // Gamer entities
     QTimer* timer;
+
+    // Player
     QGraphicsPixmapItem* qgti;
-    QGraphicsRectItem* qgri;
-    QGraphicsRectItem* platform1;
-    QGraphicsRectItem* platform2;
-    QGraphicsRectItem* wall;
-    QGraphicsRectItem* finish;
+    // PLayer Hit boxes
     QGraphicsLineItem* leftHitBox;
     QGraphicsLineItem* RightHitBox;
     QGraphicsLineItem* UpHitBox;
     QGraphicsLineItem* DownHitBox;
 
-    //bool pour collision
-//    bool leftCollision = false;
-//    bool leftCollision = false;
-//    bool leftCollision = false;
-//    bool leftCollision = false;
+    // Platforms
+    QGraphicsRectItem* qgri;
+    QGraphicsRectItem* platform1;
+    QGraphicsRectItem* platform2;
+    QGraphicsRectItem* wall;
+    QGraphicsRectItem* finish;
 
     // other values
-    int countJump = 2;
+    int countJump = 2; // => not used
     int speed;
     bool leftMove = false;
     bool rightMove = false;
     bool downMove = false;
     bool upMove = false;
     bool onPlatform = false;
-
+    int countDeaths = 0;
     // PLateforme
     int speedPlateforme = 1;
     bool retourPlateforme = false;
 
 public :
     MyScene(QObject* parent = nullptr);
-    void drawBackground(QPainter* painter, const QRectF& rect);
     virtual ~MyScene();
 
+    // background
+    void drawBackground(QPainter* painter, const QRectF& rect);
     QPixmap background;
-    int countDeaths = 0;
+
 
     // Mutateurs
     void setLeftMove(bool val);
@@ -69,26 +70,28 @@ public :
     void setUpMove(bool val);
     void setDownMove(bool val);
     void setOnPlatform(bool val);
-    void setSpeed(int speed) { this->speed = speed; }
+    void setSpeed(int speed) { this->speed = speed; }// => not used
 
+    // Player Controls
     void move();
     void colisions();
     void playerFalls();
     void playerFinished();
 
+    // Moving Platform
     void movePlatforms();
+    bool isGamerOnPlatform();// => not used
 
     // Asceceurs
     bool getLeftMove();
     bool getRightMove();
     bool getUpMove();
-    bool getDownMove();
-
+    bool getDownMove();// => not used
     bool getOnPlatform();
+    int getSpeed() const { return speed; } // => not used
 
-    int getSpeed() const { return speed; }
 
-     bool isGamerOnPlatform();
+    // NOTES
     // fonction detect Colission plat/plat et joueur/plat sur les differents cotés de la hitbox
     // set Level => create Walls and platforms
     // faire un flag vert quand on le touche le player vois une fenetre qui souvre avec son temps et le meilleurs temp
@@ -97,6 +100,7 @@ public :
     // faire des sons quand le perso gagne/meurt/début de partie
     // faire en sorte que quand le personnage recule il se retourne
     // petit scénario => sauver la princesse
+    // gestion mémoire
 
 public slots :
     void update();
@@ -104,7 +108,6 @@ public slots :
 protected:
     void keyPressEvent(QKeyEvent* event);
     void keyReleaseEvent(QKeyEvent* event);
-//    void keyReleaseEvent(QKeyEvent* event);
 };
 
 
