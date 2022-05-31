@@ -127,6 +127,18 @@
 		<Unit filename="/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MyScene.h">
 			<Option target="CPP_QT_TPminiprojet"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/Player.cpp">
+			<Option target="CPP_QT_TPminiprojet"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/Player.h">
+			<Option target="CPP_QT_TPminiprojet"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/WindowTwo.cpp">
+			<Option target="CPP_QT_TPminiprojet"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/WindowTwo.h">
+			<Option target="CPP_QT_TPminiprojet"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/main.cpp">
 			<Option target="CPP_QT_TPminiprojet"/>
 		</Unit>

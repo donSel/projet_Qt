@@ -7,6 +7,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp" "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o"
   "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MainWindow.cpp" "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CMakeFiles/CPP_QT_TPminiprojet.dir/src/MainWindow.cpp.o"
   "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/MyScene.cpp" "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o"
+  "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/Player.cpp" "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o"
+  "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/WindowTwo.cpp" "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o"
   "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/src/main.cpp" "/mnt/c/Users/micka/Documents/ISEN/CIR_2/C++/QT/CPP_QT_TPminiprojet/cmake-build-debug/CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
