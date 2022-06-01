@@ -39,6 +39,8 @@ private:
     bool downMove = false;
     bool onPlatform = false;
     bool upMove = false;
+    bool turnedLeft = false;
+    bool turnedRight = true;
 
 public:
     // constructeur
@@ -53,13 +55,16 @@ public:
     void setUpMove(bool val);
     void setDownMove(bool val);
     void setOnPlatform(bool val);
+    void setTurnedLeft(bool val);
+    void setTurnedRight(bool val);
 
     // Asceceurs
     bool getLeftMove() const;
     bool getRightMove() const;
     bool getUpMove() const;
-    bool getDownMove() const;// => not used
     bool getOnPlatform() const;
+    bool getTurnedLeft() const;
+    bool getTurnedRight() const;
     // Player
     QGraphicsPixmapItem* getQgti();
     QGraphicsLineItem* getLeftHitbox();

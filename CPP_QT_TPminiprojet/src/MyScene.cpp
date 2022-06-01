@@ -1,16 +1,13 @@
 #include <QObject>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include <QPainter>
 #include <QGraphicsPixmapItem>
 #include <QTimer>
 #include <QKeyEvent>
 #include <iostream>
-#include <QBrush>
-#include <QImage>
-#include <QList>
-#include <QVector>
 #include <QMessageBox>
+#include <string>
+#include <QApplication>
 
 
 #include "MyScene.h"
@@ -25,49 +22,64 @@ MyScene::MyScene(QObject* parent) : QGraphicsScene(parent) {
     this->timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
     this->timer->start(30); //toutes les 30 millisecondes
-
     // Connect update function
     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
 
-    // Set Platforms
-    this->qgri = new QGraphicsRectItem(10, 0, 100, 100);
-    qgri->setBrush(Qt::gray); // setting color
-    this->addItem(qgri);
+    // Display Score
+    displayScore = new QGraphicsTextItem(); // display score above the player
+    displayScore->setDefaultTextColor(Qt::red);
+    this->addItem(displayScore);
 
-    this->platform1 = new QGraphicsRectItem(-70, -70, 100, 20);
-    platform1->setBrush(Qt::gray); // setting color
-    this->addItem(platform1);
+    // Display begining message
+    displayInfo = new QGraphicsTextItem(); // display score in direct
+    displayInfo->setDefaultTextColor(Qt::cyan);
+    this->addItem(displayInfo);
+    string infoString = "Welcome To the Gulag, to be free go to the green platform. \nTherefore use the arrow keys to move.\nTo Restart Press \'R\' key !\nTo Quit Press the \'Q\' key. ";
+    QString info = QString::fromStdString(infoString);
+    displayInfo->setPlainText(info);
+    displayInfo->setPos(-50, -170);
 
-    // Set moving platform
-    this->platform2 = new QGraphicsRectItem(50, 0, 50, 10);
-    platform2->setBrush(Qt::gray); // setting color
-    // setting image => unsuccessfull
-//    QImage* img = new QImage("grass_bloc.jpg");
-//    platform2->setTextureImage(&img);
-    this->addItem(platform2);
 
-    // Set Finish
-    this->finish = new QGraphicsRectItem(300, 0, 50, 20);
-    finish->setBrush(Qt::green); // setting color
-    this->addItem(finish);
+            // Creating the Obstacles Vector
+        // creating obstacles elements
+    // Moving Platforms
+    // Platform
+    this->obstacles.push_back(createFinishPlatform(1200, 0, 50, 20));
+    this->obstacles.push_back(createMovingPlatform(50, 0));
+    this->obstacles.push_back(createPlatform(300, 0));
+    this->obstacles.push_back(createPlatform(10, 0));
+    this->obstacles.push_back(createPlatform(-70, -70, 100, 20));
+    this->obstacles.push_back(createPlatform(600, 0, 150, 20));
+    this->obstacles.push_back(createPlatform(650, -60, 150, 20));
+    this->obstacles.push_back(createPlatform(1000, -60, 70, 20));
+    this->obstacles.push_back(createMovingPlatform(680, -60));
+    // Walls
+    this->obstacles.push_back(createWall(50, -40));
+    this->obstacles.push_back(createWall(200, -40));
+    this->obstacles.push_back(createWall(450, 0));
+    this->obstacles.push_back(createWall(500, 0));
+    this->obstacles.push_back(createWall(550, 0));
+    this->obstacles.push_back(createWall(700, -100));
+    this->obstacles.push_back(createWall(1120, -20));
+    this->obstacles.push_back(createWall(1120, -20));
+    this->obstacles.push_back(createWall(1120, -20));
 
-    // Set Walls
-    this->wall = new QGraphicsRectItem(50, -40, 10, 40);
-    wall->setBrush(Qt::darkGray); // setting color
-    this->addItem(wall);
+    // pushing obstacles to Vector
+    int nbObstacles = this->obstacles.size();
+    // Adding them to the Scene
+    for (int i = 0; i < nbObstacles; i++) {
+        QGraphicsRectItem* obstacle = this->obstacles[i];
+        this->addItem(obstacle);
+    }
 
     // Set Player
     this->player = new Player();
-
     this->addItem(player->getQgti());
 
-    // Set Hitbox
+    // Set Hitboxes of the player
     this->addItem(player->getLeftHitbox());
-
     this->addItem(player->getRightHitbox());
-
     this->addItem(player->getDownHitbox());
-
     this->addItem(player->getUpHitbox());
 
     // Debug Start Position
@@ -75,28 +87,28 @@ MyScene::MyScene(QObject* parent) : QGraphicsScene(parent) {
 }
 
 
-// Ascesseur
-Player* MyScene::getPLayer(){
-    return player;
-}
-
-// tableau vect class brick update si il tape pas une brique colidWith
-
 void MyScene::update() {
+    QPointF pos = player->getQgti()->pos();
+
     // Update score value
     scoreInMs += 30;
+    scoreInMsTwo = (scoreInMs / 2);
+    // Display player Value
+    string scoreInMsString = to_string(scoreInMsTwo);
+    string timeTextString = timeText + scoreInMsString + timeTextTwo;
+    QString timeString = QString::fromStdString(timeTextString);
+    displayScore->setPlainText(timeString);
+    displayScore->setPos(pos.rx() - 40, pos.ry() - 100);
 
     // Center player View
     persoViews.append(this->views());
     persoViews[0]->centerOn(this->player->getQgti());
 
-    // Gravité => (vérifier si le personnage est bien en contact avec une plateforme)
+    // Gravité => check if the player is not on a plateform to implement gravity
     if (!player->getOnPlatform()){
         QPointF pos = player->getQgti()->pos(); //récupération de la position de l’objet getQgti()
         player->getQgti()->setPos(pos.rx(), pos.ry() + GRAVITY); //incrémentation de la coordonnée y
     }
-//    cout << "is on platform : " << getOnPlatform() << endl;
-//    cout << "count Deaths : " << countDeaths << endl;
 
     // Colosions
     colisions();
@@ -105,7 +117,8 @@ void MyScene::update() {
     player->move();
 
     // Moving platforms
-    movePlatforms();
+    movePlatform1();
+    movePlatform2();
 
     // SetPos player if he falls
     playerFalls();
@@ -115,9 +128,8 @@ void MyScene::update() {
 }
 
 
-void MyScene::playerFalls(){
+void MyScene::playerFalls(){ // runs when player die, restarting game
     QPointF pos = player->getQgti()->pos();
-//    cout << pos.ry() << endl;
     if (pos.ry() > 300){
         QMessageBox msgBox; // Mesage box
         msgBox.setText("Wasted !");
@@ -128,14 +140,13 @@ void MyScene::playerFalls(){
         player->setUpMove(false);
         player->setDownMove(false);
         player->getQgti()->setPos(START_X, START_Y);
-        countDeaths++;
         scoreInMs = 0;
     }
 }
 
 
-void MyScene::playerFinished(){
-    if (player->getDownHitbox()->collidesWithItem(finish)){
+void MyScene::playerFinished(){ // runs when player win, open a End window
+    if (player->getDownHitbox()->collidesWithItem(obstacles[0])){
         QMessageBox msgBox; // Mesage box
         msgBox.setText("You win !");
         msgBox.exec();
@@ -149,21 +160,18 @@ void MyScene::playerFinished(){
 
         // Display Ending Image
         timer->stop(); // mise en pause
-        WindowTwo* window = new WindowTwo(nullptr, scoreInMs);
+        WindowTwo* window = new WindowTwo(nullptr, scoreInMs / 2);
         window->timer = this->timer; // passing the Scene Timer to the WindowTwo Class
         window->show();
-//        timer->start(30); // mise en pause
         scoreInMs = 0;
     }
 }
 
 
-void MyScene::colisions(){
-
+void MyScene::colisions(){ // Managmement of the colisions
     // Colision with the upper part of a platform
-    if (player->getDownHitbox()->collidesWithItem(qgri) || player->getDownHitbox()->collidesWithItem(platform2) || player->getDownHitbox()->collidesWithItem(wall) || player->getDownHitbox()->collidesWithItem(platform1) || player->getDownHitbox()->collidesWithItem(finish)) { // liste de mur colide with item
+    if (isObstacleHitboxColision(player->getDownHitbox())){ // liste de mur colide with item
         QPointF pos = player->getQgti()->pos();
-//        cout << "Collision basse !" << endl;
         player->getQgti()->setPos(pos.rx(), pos.ry());
         player->setOnPlatform(true);
     }
@@ -172,53 +180,69 @@ void MyScene::colisions(){
     }
 
     // Colision with the lower part of a platform
-    if (player->getUpHitbox()->collidesWithItem(qgri) || player->getUpHitbox()->collidesWithItem(platform2) || player->getUpHitbox()->collidesWithItem(wall) || player->getUpHitbox()->collidesWithItem(platform1) || player->getUpHitbox()->collidesWithItem(finish)) { // liste de mur colide with item
+    if (isObstacleHitboxColision(player->getUpHitbox())){ // liste de mur colide with item
         QPointF pos = player->getQgti()->pos();
-//        cout << "Collision haute !" << endl;
-        player->getQgti()->setPos(pos.rx(), pos.ry() + 40);
+        player->getQgti()->setPos(pos.rx(), pos.ry() + 20);
     }
 
     // Left colision with a wall or platform
-    if (player->getLeftHitbox()->collidesWithItem(qgri) || player->getLeftHitbox()->collidesWithItem(platform2) || player->getLeftHitbox()->collidesWithItem(wall) || player->getLeftHitbox()->collidesWithItem(platform1) || player->getLeftHitbox()->collidesWithItem(finish)) { // liste de mur colide with item
+    if (isObstacleHitboxColision(player->getLeftHitbox())){
         QPointF pos = player->getQgti()->pos();
-//        cout << "Collision gauche !" << endl;
         player->getQgti()->setPos(pos.rx() + XMOVE, pos.ry());
     }
 
     // Right colision with a wall or platform
-    if (player->getRightHitbox()->collidesWithItem(qgri) || player->getRightHitbox()->collidesWithItem(platform2) || player->getRightHitbox()->collidesWithItem(wall) || player->getRightHitbox()->collidesWithItem(platform1) || player->getRightHitbox()->collidesWithItem(finish)) { // liste de mur colide with item
+    if (isObstacleHitboxColision(player->getRightHitbox())){
         QPointF pos = player->getQgti()->pos();
-//        cout << "Collision droite !" << endl;
         player->getQgti()->setPos(pos.rx() - XMOVE, pos.ry());
     }
 }
 
 
-void MyScene::movePlatforms() { // faire une fonction mouvPlatform qui prends en parametre la plateforme, et les les plat voisines comme ca ca se gère automatiquement
-    QPointF pos = platform2->pos();
-    if (platform2->collidesWithItem(finish)) {
-        speedPlateforme = -1;
-    }
-    if (platform2->collidesWithItem(qgri)) {
-        speedPlateforme = 1;
-//        cout << "collision avec la première palteforme ! " << endl;
-    }
-    platform2->setPos(pos.rx() + speedPlateforme, pos.ry());
-}
-
-
-bool MyScene::isGamerOnPlatform(){ //detect if collision between platform and getDownHitbox()
-    if (player->getDownHitbox()->collidesWithItem(qgri) || player->getDownHitbox()->collidesWithItem(platform2) || player->getDownHitbox()->collidesWithItem(wall) || player->getDownHitbox()->collidesWithItem(platform1) || player->getDownHitbox()->collidesWithItem(finish)){
-        return true;
+bool MyScene::isObstacleHitboxColision(QGraphicsLineItem* hitBox){ // return true if the player hit an obstacle
+    int nbObstacles = this->obstacles.size();
+    // Adding them to the Scene
+    for (int i = 0; i < nbObstacles; i++) {
+        if (hitBox->collidesWithItem(obstacles[i])){
+            return true;
+        }
     }
     return false;
 }
 
 
+void MyScene::movePlatform1() { // move the first plateform
+    QPointF pos = obstacles[1]->pos();
+    if (obstacles[1]->collidesWithItem(obstacles[2])) {
+        speedPlateforme = -1;
+    }
+    if (obstacles[1]->collidesWithItem(obstacles[3])) {
+        speedPlateforme = 1;
+    }
+    obstacles[1]->setPos(pos.rx()  + speedPlateforme, pos.ry());
+}
+
+
+void MyScene::movePlatform2() { // move the first plateform
+    QPointF pos = obstacles[8]->pos();
+    if (obstacles[8]->collidesWithItem(obstacles[7])) {
+        speedPlateformeTwo = -1;
+    }
+    if (obstacles[8]->collidesWithItem(obstacles[6])) {
+        speedPlateformeTwo = 1;
+    }
+    obstacles[8]->setPos(pos.rx()  + speedPlateformeTwo, pos.ry());
+}
+
+
+void MyScene::reverseCharacter() { // function to reverse the player image
+    this->player->setPixmap(this->player->pixmap().transformed(QTransform().scale(-1,1)));
+}
+
+
 void MyScene::keyPressEvent(QKeyEvent* event){
 
-    if (event->key() == Qt::Key_Up){ // activer si et suelement si le personnage est en contact avec une plateforme sous lui
-//        cout << "is Gamer on platform : " << getOnPlatform() << endl;
+    if (event->key() == Qt::Key_Up){ // activer si et seulement si le personnage est en contact avec une plateforme sous lui
         if (player->getOnPlatform()){
             player->setUpMove(true);
         }
@@ -232,16 +256,37 @@ void MyScene::keyPressEvent(QKeyEvent* event){
     }
     if (event->key() == Qt::Key_Left){
         player->setLeftMove(true);
+        if (!player->getTurnedLeft()){ // turning the player image
+            player->setTurnedLeft(true);
+            player->setTurnedRight(false);
+            reverseCharacter();
+        }
     }
     if (event->key() == Qt::Key_Right){
         player->setRightMove(true);
+        if (!player->getTurnedRight()){ // turning the player image
+            player->setTurnedRight(true);
+            player->setTurnedLeft(false);
+            reverseCharacter();
+        }
+    }
+    if (event->key() == Qt::Key_R){ // restart game if R pressed
+        player->getQgti()->setPos(START_X, START_Y);
+        scoreInMs = 0;
+    }
+    if (event->key() == Qt::Key_Q){ // close game if Q key pressed
+        // Message Box Confirm UserName entered
+        QMessageBox msgBox; // Mesage box
+        msgBox.setText("Bye !");
+        msgBox.exec();
+        QCoreApplication::quit();
     }
 }
 
 
 void MyScene::keyReleaseEvent(QKeyEvent *event) {
 
-    if (event->key() == Qt::Key_Up){ // relachement sur la touche haut du clavier
+    if (event->key() == Qt::Key_Up){ // management releasement of the key
         player->setUpMove(false);
     }
 
@@ -258,9 +303,35 @@ void MyScene::keyReleaseEvent(QKeyEvent *event) {
 }
 
 
+// Creating obstacles
+QGraphicsRectItem* MyScene::createFinishPlatform(int x, int y, int w, int h){
+    QGraphicsRectItem* createdFinish = new QGraphicsRectItem(x, y, w, h);
+    createdFinish->setBrush(Qt::green); // setting color
+    return createdFinish;
+}
+
+// funcitonSetPlatform that create platforms/walls/ and adding them to To Vect obstacle
+QGraphicsRectItem* MyScene::createPlatform(int x, int y, int w, int h){
+    QGraphicsRectItem* createdPlatform =  new QGraphicsRectItem(x, y, w, h);
+    createdPlatform->setBrush(Qt::gray); // setting color
+    return createdPlatform;
+}
+
+
+QGraphicsRectItem* MyScene::createMovingPlatform(int x, int y, int w, int h){
+    QGraphicsRectItem* createdPlatform =  new QGraphicsRectItem(x, y, w, h);
+    createdPlatform->setBrush(Qt::gray); // setting color
+    return createdPlatform;
+}
+
+
+QGraphicsRectItem* MyScene::createWall(int x, int y, int w, int h){
+    QGraphicsRectItem* createdWall =  new QGraphicsRectItem(x, y, w, h);
+    createdWall->setBrush(Qt::darkGray); // setting color
+    return createdWall;
+}
+
+// Destructor
 MyScene::~MyScene() {
     delete this->timer;
-//    for(PlaneItem* planeItem : this->planeItems){
-//        delete planeItem;
-//    }
 }

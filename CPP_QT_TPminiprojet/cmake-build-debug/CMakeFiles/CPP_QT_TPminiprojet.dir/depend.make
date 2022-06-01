@@ -127,6 +127,7 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.
 CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QAction
 CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsLineItem
 CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsScene
+CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsTextItem
 CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsView
 CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel
 CMakeFiles/CPP_QT_TPminiprojet.dir/CPP_QT_TPminiprojet_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit
@@ -293,6 +294,7 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/MainWindow.cpp.o: /usr/include/x86_64-lin
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QAction
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsLineItem
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsScene
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsTextItem
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsView
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MainWindow.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit
@@ -344,7 +346,6 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QRectF
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QString
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer
-CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QVector
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h
@@ -361,9 +362,11 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h
@@ -419,8 +422,6 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
-CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QBrush
-CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QKeyEvent
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QList
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
@@ -432,8 +433,10 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qguiapplication.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qimage.h
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qinputmethod.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h
@@ -458,9 +461,11 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs_win.h
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsLineItem
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsPixmapItem
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsScene
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsTextItem
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsView
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit
@@ -474,7 +479,9 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractslider.h
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdesktopwidget.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/MyScene.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicsitem.h
@@ -577,8 +584,6 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h
-CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QBrush
-CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QKeyEvent
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/QPixmap
@@ -615,14 +620,11 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsPixmapItem
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsScene
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsView
-CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMessageBox
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h
-CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicsitem.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicsscene.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicsview.h
-CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmessagebox.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qscrollarea.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h
@@ -632,10 +634,8 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/Player.cpp.o: /usr/include/x86_64-linux-g
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: ../src/WindowTwo.cpp
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: ../src/WindowTwo.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug
-CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QDir
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QString
-CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h
@@ -658,11 +658,9 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linu
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h
-CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qdir.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h
-CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qfileinfo.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h
@@ -752,6 +750,7 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linu
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs_win.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsTextItem
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
@@ -769,6 +768,7 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linu
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdesktopwidget.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicsitem.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgridlayout.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/WindowTwo.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h
@@ -916,6 +916,7 @@ CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsLineItem
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsScene
+CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsTextItem
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsView
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel
 CMakeFiles/CPP_QT_TPminiprojet.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit

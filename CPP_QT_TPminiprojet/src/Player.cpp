@@ -5,24 +5,19 @@
 #include <QObject>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include <QPainter>
 #include <QGraphicsPixmapItem>
-#include <QTimer>
-#include <QKeyEvent>
-#include <iostream>
-#include <QBrush>
-#include <QImage>
-#include <QMessageBox>
 
 #include "Player.h"
 
 using namespace std;
 
-// constructeur
+// constructor
 Player::Player(){
+    // setting the skin of the player
     qgti = new QGraphicsPixmapItem(QPixmap("../img/Hero-idle-big.gif").scaled(30,40));
     qgti->setOffset(0, -40);
 
+    // creating left/top/up/down hitboxes of the player
     leftHitBox = new QGraphicsLineItem(5, -1, 5, -10, qgti);
     leftHitBox->setOpacity(0);
 
@@ -36,17 +31,16 @@ Player::Player(){
     UpHitBox->setOpacity(0);
 }
 
+
 // Player Controls
 void Player::move(){
 
     if (getLeftMove()){
-//        cout << "Gauche !" << endl;
         QPointF pos = qgti->pos();
         qgti->setPos(pos.rx() - XMOVE, pos.ry());
     }
 
     if (getRightMove()){
-//        cout << "Droite !" << endl;
         QPointF pos = qgti->pos();
         qgti->setPos(pos.rx() + XMOVE, pos.ry());
     }
@@ -87,6 +81,16 @@ void Player::setOnPlatform(bool val){
 }
 
 
+void Player::setTurnedLeft(bool val){
+    turnedLeft = val;
+}
+
+
+void Player::setTurnedRight(bool val){
+    turnedRight = val;
+}
+
+
 // Asceceurs
 bool Player::getLeftMove() const {
     return leftMove;
@@ -103,14 +107,20 @@ bool Player::getUpMove() const {
 }
 
 
-bool Player::getDownMove() const {
-    return upMove;
-}
-
-
 bool Player::getOnPlatform() const {
     return onPlatform;
 }
+
+
+bool Player::getTurnedLeft() const{
+    return turnedLeft;
+}
+
+
+bool Player::getTurnedRight() const{
+    return turnedRight;
+}
+
 
 // Player
 QGraphicsPixmapItem* Player::getQgti(){

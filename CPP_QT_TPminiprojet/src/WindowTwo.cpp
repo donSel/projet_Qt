@@ -5,24 +5,17 @@
 #include "WindowTwo.h"
 
 #include <QProgressBar>
-#include <QSlider>
-#include <QObject>
 #include <QMainWindow>
 #include <QVBoxLayout>
-#include <QObject>
-#include <QString>
 #include <QPushButton>
-#include <iostream>
 #include <string>
-#include <QTextEdit>
 #include <QApplication>
 #include <string>
 #include <QList>
-#include <QStringList>
 #include <QTextStream>
-#include <QDir>
 #include <QDebug>
 #include <QMessageBox>
+#include <QGraphicsTextItem>
 
 
 #include "WindowTwo.h"
@@ -31,10 +24,8 @@ using namespace std;
 
 WindowTwo::WindowTwo(QWidget* parent, int score) : QMainWindow(parent) {
     // Setting Player score
+//    this->score = (score / 2);
     this->score = score;
-
-    // Scene timer
-//    this->timerSec = timer;
 
     // Main Widget
     this->setWindowTitle("Game End");
@@ -46,8 +37,9 @@ WindowTwo::WindowTwo(QWidget* parent, int score) : QMainWindow(parent) {
 
     // infoText
     string stringScore = to_string(score);
+    string endString = " milliseconds.";
     string textString = "Enter your username, Your score : ";
-    string infoString = textString + stringScore;
+    string infoString = textString + stringScore + endString;
     QString infoStringTwo = QString::fromStdString(infoString);
     this->infoTextLabel = new QLabel();
     infoTextLabel->setText(infoStringTwo);
@@ -112,7 +104,7 @@ void WindowTwo::setUserName() { // Open a txt file and write in a txt file the u
 void WindowTwo::viewResults(){
     // open the score board
     QMessageBox msgBox; // Mesage box
-    msgBox.setText("check the score_board.csv file to see all the results");
+    msgBox.setText("check the score_board.csv file to see all the results (format : score (in ms):username");
     msgBox.exec();
 }
 
